@@ -1,0 +1,34 @@
+CREATE DATABASE Sprint1;
+
+USE Sprint1;
+
+CREATE TABLE musica( 
+idmusica VARCHAR (40) PRIMARY KEY,
+titulo varchar(40),
+artista varchar(40),
+genero varchar(40));
+
+INSERT INTO musica VALUES 
+('musica 1','Congratulations','Post Malone','Trapp'),
+('musica 2','When i was your man','Bruno Mars','Pop'),
+('musica 3','Heartless','Kenye West','Trapp'),
+('musica 4','Camisa 10','Turma do Pagode','Pagode'),
+('musica 5','Deixa acontecer','Grupo Revelação','Pagode'),
+('musica 6','Gods plan','Drake','Pop'),
+('musica 7','Vida loka pt1','Racionais Mcs','Rap'),
+('musica 8','Dias de luta dias de gloria','Chorão','Rap');
+
+SELECT * FROM musica;
+SELECT titulo, artista FROM musica;
+SELECT * FROM musica
+	WHERE genero = 'Rap';
+SELECT  * FROM musica
+	WHERE artista = 'Bruno mars';
+SELECT * FROM musica 
+	WHERE tiutlo LIKE 'C%';
+SELECT * FROM musica
+	WHERE titulo LIKE '%a';
+SELECT * FROM musica
+	WHERE titulo LIKE '_i%';
+SELECT * FROM musica	
+	WHERE titulo LIKE 'a_';
