@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício 03</title>
+    </head>
+    <body>
+        <h1>Por favor digite o nome do seu time e quantos títulos ele tem:</h1>
+        <input placeholder="Nome do time" id="time" type="text" >
+        <br><br>
+        <input placeholder="Quantidade de títulos" id="titulos" type="number" >
+        <br><br>
+        <button onClick="torcer()">Amo meu time</button>
+    </body>
+</html>
+
+<script>
+    
+    function torcer() {
+        alert("O time " + time.value + " tem " + titulos.value + " títulos")        
+    }
+</script>

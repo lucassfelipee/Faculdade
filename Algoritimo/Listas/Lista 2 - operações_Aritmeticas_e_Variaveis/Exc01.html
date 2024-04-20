@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body>
+    <h1>Por favor insira sua idade:</h1>
+    <input id="idade" placeholder="Idade:" type="text">
+    <br>
+    <button onclick="calcularHomem()">Aposentadoria Homem</button>
+    <button onclick="calcularMulher()">Aposentadoria Mulher</button>
+</body>
+</html>
+<script>
+    function calcularHomem() {
+        let resultado = 70 - idade.value;
+        alert('Ainda falta ' + resultado + ' anos para se aposentar');
+    }
+
+    function calcularMulher() {
+        let resultado = 60 - idade.value;
+        alert('Ainda falta ' + resultado + ' anos para se aposentar');
+    }
+</script>

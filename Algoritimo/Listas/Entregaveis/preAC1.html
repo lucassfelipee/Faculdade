@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    distancia percorrida: <input type="text" id="input_distancia"><br>
+    tempo de duração da viagem: <input type="text" id="input_tempo"><br>
+    quantidade de passageiros: <input type="text" id="input_passageiro"><br>
+    hora de inicio da viagem: <input type="text" id="input_inicio"><br>
+
+    <button onclick="calcular()">Realizar Viagem</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var distancia = Number(input_distancia.value);
+        var duracao = Number(input_tempo.value);
+        var passageiro = Number(input_passageiro.value);
+        var inicio = Number(input_inicio.value);
+        var custoPercurso = 0.77 * distancia;
+        var tempo = distancia * 1.8;
+
+
+        if (duracao >= tempo + tempo * 0.1) {
+            custoPercurso += (custoPercurso * 7) / 100;
+
+
+        }
+        if (duracao < tempo - tempo / 10) {
+            custoPercurso -= (custoPercurso * 8) / 100;
+        }
+
+        if (passageiro > 1) {
+            var cargaExtra = passageiro * 3;
+        }
+
+        if (passageiro <= 1) {
+            cargaExtra = 0;
+        }
+
+        if (inicio > 0) {
+            if (inicio <= 6) {
+                var bonus = inicio + (inicio * 9) / 100;
+            }
+        }
+
+        if (inicio > 20) {
+            if (inicio <= 24) {
+                var bonus = inicio + (inicio * 11) / 100;
+            }
+        }
+
+        var combustivel = (1 / 12) * distancia;
+        var precoCombustivel = combustivel * 4;
+        var custoTotal = custoPercurso + tempo + cargaExtra + bonus;
+        div_mensagem.innerHTML = `A viagem foi iniciada às ${inicio} horas e tinha estimativa de ${tempo} minutos e durou ${duracao} minutos, percorrendo ${distancia}, com ${passageiro} passageiros, totalizando R$ ${custoTotal} do preço da corrida. Com essa distância, foram consumidos ${combustivel} litros de gasolina, totalizando R$ ${precoCombustivel} de consumo.`
+    }
+</script>

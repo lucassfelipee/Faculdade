@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    Digite a nota do ENEM do aluno: <input type="number" id="inputNotaEnem"><br><br>
+    Digite a nota do vestibular interno do aluno: <input type="number" id="inputNotaVestibular"><br><br>
+    <button onclick="avaliar()">Avaliação</button>
+</body>
+</html>
+<script>
+    function avaliar() {
+        var notaEnem = Number(inputNotaEnem.value);
+        var notaVestibular = Number(inputNotaVestibular.value);
+
+        if (notaEnem >= 800 || notaVestibular >= 700) {
+            alert(`Parabéns! Aprovado`);
+        } else {
+            alert(`Tente semestre que vem!`);
+        }
+    }
+</script>

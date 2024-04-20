@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    Digite a quantidade de passagens que você deseja adquirir: <input type="number" id="inputPassagens"><br><br>
+    <button onclick="comprar()">Comprar</button><br><br>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function comprar() {
+        var passagens = Number(inputPassagens.value);
+        var valorPassagem = 4.4;
+        var desconto = 0;
+        var resultado = 0;
+
+        if (passagens >= 8 && passagens <= 50) {
+            if (passagens >= 8 && passagens <= 19) {
+                desconto = 0.97;
+            } else if (passagens >= 20 && passagens <= 49) {
+                desconto = 0.95;
+            } else if (passagens == 50) {
+                desconto = 0.93;
+            }
+            resultado = passagens * valorPassagem * desconto;
+            divMensagem.innerHTML = `Total a pagar: R$${resultado}`;
+        } else {
+            alert("Quantidade inválida para o Fidelidade!");
+        }
+    }
+</script>
+

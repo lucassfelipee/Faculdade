@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício 04</title>
+    </head>
+    <body>
+        <h1>Por favor digite o nome da rua/avenida/vila e o número da casa onde mora:</h1>
+        <input placeholder="Rua/avenida/vila" id="rua" type="text" >
+        <br><br>
+        <input placeholder="Número da casa" id="numero" type="number" >
+        <br><br>
+        <button onClick="cadastrar()">Onde eu moro</button>
+    </body>
+</html>
+
+<script>
+    
+    function cadastrar() {
+        alert("Seu logradouro é " + rua.value)
+        alert("O número do seu logradouro é " + numero.value)      
+    }
+</script>

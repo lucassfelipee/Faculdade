@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<body>
+    <h1>Digite o valor da pizza:</h1>
+    <input placeholder="Valor:" id="valor" type="number">
+    <br><br>
+    <h1>Digite a quantidade de amigos que vão dividir o valor:</h1>
+    <input placeholder="Quantidade de amigos:" id="amigos" type="number">
+    <button onclick="calcularValor()">#lovePizza</button>
+</body>
+</html>
+<script>
+    function calcularValor() {
+        let resultado = valor.value / amigos.value;
+        alert('Cada um dos ' + amigos.value + ' amigos vai pagar R$' + resultado);
+    }
+</script>

@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+</head>
+<body>
+    <h1>Qual o nome do guerreiro:</h1><br>
+    <input type="text" id="nome" placeholder="Nome:">
+    <br><br>
+    <h1>Qual é o valor do ki normal:</h1><br>
+    <input type="number" id="kiNormal" placeholder="Valor do ki:">
+    <br><br>
+    <button onclick="ver()">Ver ki em cada forma</button>
+</body>
+</html>
+<script>
+    function ver() {
+        let ForcaSuperSayajin = kiNormal.value * 50
+        let ForcaSuperSayajin2 = kiNormal.value * 100
+        alert('Ki na forma Super Sayajin: ' + ForcaSuperSayajin + ', ki na forma Super Sayajin 2: ' + ForcaSuperSayajin2)
+    }
+</script>

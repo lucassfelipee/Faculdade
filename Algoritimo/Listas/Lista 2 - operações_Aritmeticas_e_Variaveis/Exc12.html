@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <h1>Digite o sabor e o preço da pizza:</h1>
+    <input type="text" id="sabor" placeholder="Sabor:">
+    <input type="number" id="preco" placeholder="Preço:"><br><br>
+    <h1>Quantos amigos vão comer:</h1>
+    <input type="number" id="quantidadeAmigos" placeholder="Quantidade de amigos:"><br><br>
+    <button onclick="calcular()">Ver valor por amigo</button><br><br>
+    <h1>Resultado:</h1>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        let precoComCaixinha = preco.value - (preco.value * 0.1)
+        divMensagem.innerHTML = `Cada amigo vai colaborar com R$ ${precoComCaixinha / quantidadeAmigos.value} para a pizza de ${sabor.value}`;
+    }
+</script>

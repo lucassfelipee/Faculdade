@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    <h1>Digite o valor da passagem de ônibus:</h1>
+    <input type="number" id="valorPassagem" placeholder="Valor da passagem:"><br><br>
+    <h1>Quantas viagens você faz por mês:</h1>
+    <input type="number" id="viagensPorMes" placeholder="Viagens por mês:"><br><br>
+    <h1>Qual a distância do seu trabalho até a sua casa (em km):</h1>
+    <input type="number" id="distancia" placeholder="Distância do trabalho até a casa:"><br><br>
+    <button onclick="calcular()">Calcular VT</button><br><br>
+    <h1>Resultado:</h1>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        let viagensUber = viagensPorMes.value * 0.1;
+        let total = (viagensUber * (distancia.value * 0.75)) + Number((valorPassagem.value * viagensPorMes.value));
+        divMensagem.innerHTML = `Você vai gastar R$ ${total}  por mês com transporte.`;
+    }
+</script>

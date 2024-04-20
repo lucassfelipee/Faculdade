@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercício 02</title>
+    </head>
+    <body>
+        <h1>Por favor digite seu peso e altura:</h1>
+        <input placeholder="Peso" id="peso" type="number" >
+        <br><br>
+        <input placeholder="Altura" id="altura" type="number" >
+        <br><br>
+        <button onClick="falar()">Fale comigo</button>
+    </body>
+</html>
+
+<script>
+    
+    function falar() {
+        alert("Você pesa " + peso.value + " kg e tem " + altura.value + " m de altura")        
+    }
+</script>

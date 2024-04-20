@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    Digite a nota do aluno: <input type="number" id="inputNota"><br><br>
+    Digite a frequência do aluno: <input type="number" id="inputFrequencia"><br><br>
+    <button onclick="avaliar()">Avaliar aluno</button>
+</body>
+</html>
+<script>
+    function avaliar() {
+        var nota = Number(inputNota.value);
+        var frequencia = Number(inputFrequencia.value);
+
+        if (nota >= 6 && frequencia >= 75) {
+            alert(`Parabéns! Aprovado!`);
+        } else {
+            alert("Infelizmente, não foi desta vez");
+        }
+    }
+</script>

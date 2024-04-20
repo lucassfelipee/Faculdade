@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #402020;
+        }
+
+        .painel {
+            width: 500px;
+            height: 550px;
+            background-color: white;
+            margin: auto;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="painel">
+        <h1 style="font-family: 'Times New Roman', Times, serif ; text-decoration: underline; "> Calculadora Financeira </h1>
+        
+        👤 Nome: <br> <input type="text" id="input_nome" style="background-color: beige;"><br>
+
+        🚰 Quantos litros de água é necessario para cada pé de café: <br> <input type="number" id="input_agua" style="background-color: beige;"> <br>
+
+        🪴 Quantidades de pés de café: <br> <input type="number" id="input_pe" style="background-color: beige;"><br><br>
+
+        <button onclick="calcular()" style="background-color: beige;"> 💸 Descobrir gastos  </button><br>
+
+        <img src="https://static.vecteezy.com/ti/vetor-gratis/p3/6839478-cafe-graos-cafe-grao-icone-logo-sinal-icone-gratis-vetor.jpg"
+            alt="" width=200px>
+        <div id="div_mensagem" style="font-family: 'Times New Roman', Times, serif; border: 1px solid black; border-radius: 12px; margin: 0 2rem;  justify-content: center; display: flex; align-items: center; text-align: center; background-color: beige;"></div>
+
+    </div>
+    <span style="border-radius: 100px;"></span>
+</body>
+
+</html> 
+<script>
+    function calcular() {
+        var nome = input_nome.value;
+        var agua = Number (input_agua.value);
+        var pes = Number (input_pe.value);
+        var consumo = agua * pes;
+        var contaMensal = consumo / 0.50;
+        var ano = contaMensal * 12;
+        var perda = (consumo * 20) / 100;
+        var muda = perda * 20;
+
+        div_mensagem.innerHTML = `Olá Senhor(a) ${nome} o seu cafezal de água anualmente gasta R$ ${ano} e o senhor(a)
+         perde anualmente por conta da má irrigação um total de  ${perda} mudas, e perde um total de R$: ${muda} por ano.`;
+
+    }
+</script>

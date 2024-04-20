@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Valor conta de agua: <input type="number" id="input_agua"> <br>
+    Valor conta de energia: <input type="number" id="input_energia"> <br>
+    Qual dessas é sua operadora (oi,claro,tim ou vivo): <input type="text" id="input_operadora"> <br>
+    Quantos MB de internet: <input type="number" id="input_mb"> <br>
+
+    <button onclick="calcular()"> Descobrir</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var agua = Number(input_agua.value);
+        var energia = Number(input_energia.value);
+        var operadora = input_operadora.value;
+        var mb = Number(input_mb.value);
+
+        var litroAgua = agua / 0.50;
+
+       var gasto = 0;
+
+        if (energia <= 30) {
+             gasto = energia * 0.18;
+        }
+        if (energia >= 31 <= 100) {
+             gasto = energia * 0.23;
+        }
+        if (energia >= 101) {
+             gasto = energia * 0.48;
+        }
+
+
+
+        if (operadora == "oi") {
+            var custoInt = (mb / 500) * 90;
+        }
+           
+        if (operadora == "claro") {
+            var custoInt = (mb / 500) * 119.90;
+           
+        }
+        if (operadora == "tim") {
+            var custoInt = (mb / 500) * 107.00;
+           
+        }
+        if (operadora == "vivo") {
+            var custoInt = (mb / 500) * 120.00;
+           
+        }
+
+        var Total = agua + gasto + custoInt;
+
+        div_mensagem.innerHTML = `A sua casa gasta ${litroAgua} litros por mês.<br> O valor da sua conta de energia é de R$${gasto}. <br>
+            A operadora da sua casa é ${operadora} e o valor da sua conta de internet é de R$${custoInt}. <br>
+             O valor total das contas da sua casa á ${Total}.`
+
+    }
+
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidas antropométricas  </title>
+</head>
+<body>
+    <h1> Medidas antropométricas </h1>        
+    Nome completo:<input type="text" id="inputNome"><br>
+    Peso(em quilogramas): <input type="number" id="inputPeso"><br>
+    Altura(metros): <input type="number" id="inputAltura"><Br>
+    <button onclick="medir()">Calcular</button>
+
+    <div id="div_mensagem"></div>   
+   
+</body>
+</html>
+<script> 
+
+    function medir(){
+    var peso = Number (inputPeso.value);
+    var altura = Number (inputAltura.value);
+    var nome = inputNome.value; 
+    
+    IMC = peso/(altura**2);
+    pes = altura * 3.28;
+    oncas = peso * 35.274;
+    IMCC = oncas/(pes**2);    
+    //div_mensagem.innerHTML += ` ${nome} seu IMC é de ${IMC}: A sua altura é de: ${altura} O seu peso em onças é de ${peso}:`
+     alert (nome + " seu IMC é de: " + IMC +  " A sua altura em pés de: " + pes +" O seu peso em onças é de: " + oncas + " O seu IMC em onças/pés é de: " + IMCC);
+    }
+
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 09</title>
+</head>
+<body>
+    Digite a última série que você assistiu: <input type="text" id="inputSerie"> <br><br>
+    Digite o total de episódios que você já assistiu da série: <input type="number" id="inputEpisodios"> <br><br>
+    <button onclick="verificar()">Verificar nível</button>
+    <div id="divResposta"></div>
+</body>
+</html>
+<script>
+    
+    function verificar() {
+        var serie = inputSerie.value;
+        var episodios = Number(inputEpisodios.value);
+        var horasAssistidas = episodios * 22 / 60;
+        
+        divResposta.innerHTML = `<br>Vejo que você gosta da série  ${serie}`;
+        
+        if (horasAssistidas > 30) {
+            divResposta.innerHTML += `<br>Uau, você realmente gosta dessa série!`;
+        }
+
+    }
+</script>

@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06</title>
+</head>
+<style>
+    #divRespostaNegritoVermelho {
+        font-weight: bold;
+        color: red
+    }
+</style>
+
+<body>
+    Digite o valor da renda familiar: <input type="number" id="inputRenda"> <br>
+    Digite o valor da prestação: <input type="number" id="inputPrestacao"> <br>
+    <button onclick="calcular()">Verificar financiamento</button>
+    <div id="divResposta"></div>
+    <div id="divRespostaNegritoVermelho"></div>
+</body>
+
+</html>
+<script>
+
+    function calcular() {
+        var renda = Number(inputRenda.value);
+        var prestacao = Number(inputPrestacao.value);
+        var calculo = prestacao / renda * 100;
+
+        if (calculo > 30) {
+            divRespostaNegritoVermelho.innerHTML += `<br>Será necessário complementar a renda familiar`;
+            divRespostaNegritoVermelho.innerHTML += `<br>A prestação corresponde a  ${calculo} % da renda`;
+        }
+        else {
+            divResposta.innerHTML += `<br>A prestação corresponde a  ${calculo} % da renda`;
+        }
+    }
+</script>

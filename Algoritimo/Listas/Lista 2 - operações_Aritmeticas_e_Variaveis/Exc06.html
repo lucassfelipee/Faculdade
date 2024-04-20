@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06</title>
+</head>
+<body>
+    <h1>Diga um número:</h1><br>
+    <input type="number" id="numero1" placeholder="Número 1:">
+    <br><br>
+    <h1>Diga outro número:</h1><br>
+    <input type="number" id="numero2" placeholder="Número 2:">
+    <br><br>
+    <button onclick="somar()">SOMAR</button> <br>
+    <button onclick="subtrair()">SUBTRAIR</button> <br>
+    <button onclick="multiplicar()">MULTIPLICAR</button> <br>
+    <button onclick="dividir()">DIVIDIR</button> <br>
+</body>
+</html>
+<script>
+    function somar() {
+        let resultado = Number(numero1.value) + Number(numero2.value);
+        alert('A soma entre ' + numero1.value + ' e ' + numero2.value + ' é ' + resultado)
+    }
+    function subtrair() {
+        let resultado = numero1.value - numero2.value;
+        alert('A diferença entre ' + numero1.value + ' e ' + numero2.value + ' é ' + resultado)
+    }
+    function multiplicar() {
+        let resultado = numero1.value * numero2.value;
+        alert('O produto entre ' + numero1.value + ' e ' + numero2.value + ' é ' + resultado)
+    }
+    function dividir() {
+        let resultado = numero1.value / numero2.value;
+        alert('A razão entre ' + numero1.value + ' e ' + numero2.value + ' é ' + resultado)
+    }
+</script>
+

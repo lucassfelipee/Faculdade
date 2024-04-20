@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presente pro Lucas</title>
+
+    <style>
+        body{
+            background-color: black;
+        }
+            .painel{
+                width: 500px;
+                height: 500px;
+                background-color: white;
+                margin: auto;
+                border-radius: 20px;
+                text-align: center;
+                padding-top: 50px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+        #sim{
+            height: 40px;
+            width: 60px;
+            background-color: greenyellow;
+            border-color: white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -80px;
+            border: 2px solid white;
+        }
+
+
+
+        #nao{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color:red;
+            border-radius: 10px;
+            border: 2px solid white;
+            color: white;
+            margin-left: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="painel">
+        <h1>Quero aprender tocar violão</h1>
+        <h2>Me da um violão de presente?</h2>
+        <a href="https://www.amazon.com.br/Queens-Eletroac%C3%BAstico-Cl%C3%A1ssico-Equalizador-Madeira/dp/B0BYWD77WV/ref=asc_df_B0BYWD77WV/?tag=googleshopp00-20&linkCode=df0&hvadid=647395206924&hvpos=&hvnetw=g&hvrand=3834878650639196727&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1001773&hvtargid=pla-2245067280686&psc=1&mcid=0b157dfcc8b73f57aabd4545fbe86f05"><button id="sim"> Sim! </button></a>
+        <button onmouseover="fuja() " id="nao"> Não! </button>
+
+    </div>
+<script>
+    function fuja(){
+        var botaoNao = document.getElementById("nao")
+
+        var larguraJanela = window.innerWidth;
+        var alturaJanela = window.innerHeight;
+
+        var maxX = larguraJanela - botaoNao.offsetWidth;
+        var maxY = alturaJanela - botaoNao.offsetHeight;
+
+        var aleatorioX = Math.floor(Math.random() * maxX);
+        var aleatorioY = Math.floor(Math.random() * maxY);
+
+        botaoNao.style.left = aleatorioX + "px";
+        botaoNao.style.top = aleatorioY + "px";
+
+
+    }
+
+</script>
+</body>
+</html> 
+
+

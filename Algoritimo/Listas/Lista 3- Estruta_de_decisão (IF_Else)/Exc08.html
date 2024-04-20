@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08</title>
+</head>
+<style>
+    #divRespostaAzul {
+        color: blue
+    }
+</style>
+<body>
+    Digite a quantidade de homens que entraram no elevador: <input type="number" id="inputHomens"> <br><br>
+    Digite a quantidade de mulheres que entraram no elevador: <input type="number" id="inputMulheres"> <br><br>
+    <button onclick="verificar()">Analisar peso</button>
+    <div id="divResposta"></div>
+    <div id="divRespostaAzul"></div>
+</body>
+</html>
+<script>
+    
+    function verificar() {
+        var pesoHomens = Number(inputHomens.value) * 80;
+        var pesoMulheres = Number(inputMulheres.value) * 60;
+        var pesoTotal = pesoHomens + pesoMulheres;
+        var pesoAceitavel = 800;
+        
+        if (pesoTotal > pesoAceitavel) {
+            divRespostaAzul.innerHTML = `<br>Será necessário que alguém desça para que o elevador se movimente`;
+        }
+
+        divResposta.innerHTML = `<br>Este elevador suporta 800 kg e o peso estimado desta lotação é de  ${pesoTotal}  kg`;
+    }
+</script>

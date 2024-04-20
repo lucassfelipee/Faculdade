@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07</title>
+</head>
+<style>
+    #divRespostaNegritoVermelho {
+        font-weight: bold;
+        color: red
+    }
+</style>
+<body>
+    Digite o saldo da conta: <input type="number" id="inputSaldo"> <br><br>
+    Digite o valor do débito: <input type="number" id="inputDebito"> <br><br>
+    <button onclick="calcular()">Analisar conta</button>
+    <div id="divResposta"></div>
+    <div id="divRespostaNegritoVermelho"></div>
+</body>
+</html>
+<script>
+    
+    function calcular() {
+        var saldo = Number(inputSaldo.value);
+        var debito = Number(inputDebito.value);
+        saldo -= debito;
+        
+        if (saldo < 0) {
+            divRespostaNegritoVermelho.innerHTML += `<br>O saldo atual da conta corrente é  ${saldo}`;
+        } 
+        else {
+            divResposta.innerHTML += `<br>O saldo atual da conta corrente é  ${saldo}`;
+        }
+    }
+</script>

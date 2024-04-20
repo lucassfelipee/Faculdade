@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<body>
+    Digite a quantidade de latinhas de refrigerante que toma por dia: <input type="number" id="inputQuantidade"> <br>
+    <button onclick="calcular()">Quantos refris?</button>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var quantidadePorAno = Number(inputQuantidade.value) * 365;
+
+        divMensagem.innerHTML = "Você toma " + quantidadePorAno + " latinhas por ano!"
+
+        if (quantidadePorAno >= 500) {
+            divMensagem.innerHTML += "<br> Cuidado com a diabetes!"
+        }
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <h1>Digite o ki base do guerreiro:</h1>
+    <input type="number" id="kiBase" placeholder="Ki base:"><br><br>
+    <h1>Transformar em...</h1>
+    <button onclick="ssj()">SSJ</button>
+    <button onclick="ssj2()">SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button>
+    <h1>Resultado:</h1>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function ssj() {
+        divMensagem.innerHTML = `Após se transformar em  SSJ, o ki desse Sayajin passa a ser de ${kiBase.value * 50}`;
+    }
+    function ssj2() {
+        divMensagem.innerHTML = `Após se transformar em  SSJ2, o ki desse Sayajin passa a ser de ${kiBase.value * 100}`;
+    }
+    function ssj3() {
+        divMensagem.innerHTML = `Após se transformar em  SSJ3, o ki desse Sayajin passa a ser de ${kiBase.value * 200}`;
+    }
+</script>

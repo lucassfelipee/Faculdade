@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<style>
+    #divRespostaVermelho {
+        color: red
+    }
+
+    #divRespostaAzul {
+        color: blue
+    }
+</style>
+<body>
+    Digite o valor de seu saldo na conta do banco: <input type="number" id="inputSaldo"> <br><br>
+    <button onclick="verificar()">Verificar finanças</button>
+    <div id="divRespostaVermelho"></div>
+    <div id="divResposta"></div>
+    <div id="divRespostaAzul"></div>
+
+</body>
+</html>
+<script>
+    
+    function verificar() {
+        var saldo = Number(inputSaldo.value);
+        
+        if (saldo < 0) {
+            divRespostaVermelho.innerHTML = `<br>Está devendo!`;
+        }
+        
+        if (saldo == 0) {
+            divResposta.innerHTML = `<br>Conta zerada`;
+        }
+
+        if (saldo > 0) {
+            divRespostaAzul.innerHTML = `<br>Saldo positivo! sorriso`;
+        }
+    }
+</script>

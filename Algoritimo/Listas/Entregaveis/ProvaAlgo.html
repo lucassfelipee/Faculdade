@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Quantidade de energia consumida em kWh: <input type="number" id="input_energia"> <br>
+Bandeira tarifária da energia? <input type="text" id="input_bandeira"> <br>
+Volume de água consumido em litros: <input  type="number" id="input_litros"> <br>
+Quantidade de vazamentos de água na casa: <input type="number" id="input_vazamento"> <br>
+Volume de gás consumido em litros: <input type="number" id="input_gas"> <br>
+Quantidade de MB (megabyte) do plano de internet : <input type="number" id="input_internet"> <br>
+Possui uma linha telefônica vinculada ao plano de internet (sim ou não)?<input type="text" id="input_linha"> <br>
+<button onclick="calcular()">Calcular Despesas Fixas</button> <br>
+<div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function calcular() {   
+        var energia = Number(input_energia.value);
+        var bandeira = (input_bandeira.value);
+        var agua = Number(input_litros.value);
+        var vazamento = Number(input_vazamento.value);
+        var gas = Number(input_gas.value); 
+        var MB = Number (input_internet.value);
+       var verde = energia * 0.75;
+        var amarela = energia * 0.9;
+        var vermelha = energia * 0.10;
+        var linha = input_linha.value;
+        var consumoAgua = agua * 3.5;
+        var qntVaza = agua + 10;
+        var gasCons = gas * 2.5;
+        var qntMega = MB * 0.80; 
+        
+        var contaEnergia = bandeira - desconto;
+
+       
+    
+    if (contaEnergia <= 50){ 
+
+        var desconto =(energia * 10) / 100;
+   
+        if (bandeira == "verde") {
+           var lucas = energia * 0.75;
+        }
+        if (bandeira =="amarela") {
+            var lucas = energia * 0.90;
+        }
+        if (bandeira == "vermelha"){
+            var lucas = energia * 0.10; 
+        }
+           
+    }
+
+        if (linha =="sim"){
+            qntMega = qntMega * (qntMega + 25) / 100;
+        }
+        if ( linha =="não" ){
+            qntMega = qntMega * (qntMega - 7.5) / 100;
+        
+        }
+        var finalInternet = qntMega + lucas;
+        var contaMensal =   qntVaza + gas + finalInternet;
+
+         div_mensagem.innerHTML =  ` Com o consumo de ${energia}
+          kWh na bandeira ${bandeira}, a conta de energia totaliza R$ ${contaEnergia}. <br>
+        Com o consumo de ${agua} litros de água contendo ${vazamento} vazamentos, a conta de água totaliza R$ ${consumoAgua}. <br>
+        Com o consumo de ${gas} litros de gás, a conta de gás totaliza R$ ${gasCons}. <br>
+        Com o consumo de ${MB} MB de internet, o valor do plano de internet/telefone totaliza R$ ${finalInternet}. <br>
+        Gasto total de despesas mensal: R$ ${contaMensal}.`
+
+    }
+
+</script>
