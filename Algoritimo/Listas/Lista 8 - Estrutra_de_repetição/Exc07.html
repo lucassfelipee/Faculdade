@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercico 07</title>
+</head>
+<body>
+    Numero: <input type="number" id="iptNumero" min="20" max="100">
+    <button onclick="numero()">Adoro múltiplos de 5</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function numero(){
+        var numero = Number(iptNumero.value);
+        for(var contador = 0; contador <= numero; contador++){
+            if(contador % 5 == 0)
+            div_mensagem.innerHTML += `${contador} <br>`
+        }
+        
+    }
+</script>
