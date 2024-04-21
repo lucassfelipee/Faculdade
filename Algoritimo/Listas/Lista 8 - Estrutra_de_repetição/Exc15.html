@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+</head>
+
+<body>
+    Digite quantas pessoas vão entrar no carro: <input type="number" id="inputPessoas"> <br><br>
+    <button onclick="partir()">#Partiu Carona</button><br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function partir() {
+        var pessoas = Number(inputPessoas.value);
+        for (var contador = 1; contador <= pessoas; contador++) {
+            if (contador == 1) {
+                divResposta.innerHTML += `Entrou o ${contador}º passageiro (que é o(a) motorista)<br>`;
+            } else if (contador <= 5) {
+                divResposta.innerHTML += `Entrou o ${contador}º passageiro<br>`;
+            } else {
+                divResposta.innerHTML += `O ${contador}º passageiro terá que esperar!<br>`;
+            }
+        }
+    }
+</script>

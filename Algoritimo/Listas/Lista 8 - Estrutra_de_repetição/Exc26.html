@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 26</title>
+</head>
+
+<body>
+    Digite o primeiro número positivo: <input type="number" id="inputNumero1"> <br><br>
+    Digite o segundo número positivo: <input type="number" id="inputNumero2"> <br><br>
+    <button onclick="somar()">Somar Números</button><br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function somar() {
+        var numero1 = Number(inputNumero1.value);
+        var numero2 = Number(inputNumero2.value);
+        var somatorio = 0;
+        var mensagem = "";
+
+        if (numero1 >= 0) {
+            if (numero2 >= 1 && numero2 <= numero1) {
+                for (var contador = 1; contador <= numero1; contador++) {
+                    if (contador % numero2 == 0) {
+                        somatorio += contador;
+                        mensagem += `${contador}<br>`;
+                    }
+                }
+                divResposta.innerHTML = `${mensagem}<br><br>Soma dos Múltiplos: ${somatorio}`;
+            } else {
+                alert("Número 2 menor que 1 ou maior que o número 1");
+            }
+        } else {
+            alert("Número 1 não pode ser negativo!");
+        }
+    }
+</script>

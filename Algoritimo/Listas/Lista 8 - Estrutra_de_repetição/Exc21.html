@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 21</title>
+</head>
+
+<body>
+    Digite quantos depósitos você fez no banco: <input type="number" id="inputDepositos"> <br><br>
+    Digite o valor de cada depósito: <input type="number" id="inputValor"> <br><br>
+    <button onclick="acompanhar()">Acompanhar grana</button><br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function acompanhar() {
+        var depositos = Number(inputDepositos.value);
+        var valor = Number(inputValor.value);
+        var mensagem = "";
+        var somatorio = 0;
+
+        for (var contador = 1; contador <= depositos; contador++) {
+            if (contador % 3 == 0) {
+                somatorio += valor;
+                somatorio *= 1.01;
+                mensagem += `${contador}º Mês: R$ ${somatorio}<img style="width: 15px;" src="data:image/png;base64,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"><br>`;
+            } else {
+                somatorio += valor;
+                mensagem += `${contador}º Mês: R$ ${somatorio}<br>`;
+            }
+        }
+        divResposta.innerHTML = `${mensagem}<br> Total guardado: R$${somatorio}`;
+    }
+</script>

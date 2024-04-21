@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    Quantidade de voltas: <input type="number" id="ipt_voltas">
+    <button onclick="voltas()"> Iniciar corrida!</button>
+    <div id="div_mensagem"></div>
+</body> 
+</html>
+<script>
+    function voltas(params) {
+        var voltas = Number(ipt_voltas.value);
+        for(var contador =1; contador<= voltas; contador++){
+            div_mensagem.innerHTML +=`Carro dando a ${contador}° volta!<br>`;
+        }
+        div_mensagem.innerHTML += `Corrida fializada!`
+    }
+</script>

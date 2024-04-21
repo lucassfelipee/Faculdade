@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 27</title>
+</head>
+
+<body>
+    Digite quantos elefantes: <input type="number" id="inputElefantes"> <br><br>
+    <button onclick="atazanar()">Atazanar a médium</button><br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function atazanar() {
+        var elefantes = Number(inputElefantes.value);
+        var incomodam = "incomodam, ";
+        var mensagem = "";
+
+        for (var contador = 2; contador <= elefantes; contador++) {
+            mensagem += `1 elefante incomoda muita gente!<br>`;
+            incomodam += `incomodam, `;
+            mensagem += `${contador} elefantes, ${incomodam} muito mais!<br><br>`;
+        }
+
+        divResposta.innerHTML = `${mensagem}`;
+    }
+</script>

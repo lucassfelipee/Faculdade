@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 23</title>
+</head>
+
+<body>
+    Digite um número: <input type="number" id="inputNumero"> <br><br>
+    <button onclick="ver()">Ver Divisores</button><br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function ver() {
+        var numero = Number(inputNumero.value);
+        var mensagem = "";
+        
+        if (numero >= 0 && numero <= 100) {
+            for (var contador = 1; contador <= numero; contador++) {
+                if (numero % contador == 0) {
+                    mensagem += `${contador}<br>`;
+                }
+            }
+            divResposta.innerHTML = `${mensagem}`;
+        } else {
+            alert("O número deve ser maior ou igual a 0 e menor ou igual a 100!");
+        }
+    }
+</script>

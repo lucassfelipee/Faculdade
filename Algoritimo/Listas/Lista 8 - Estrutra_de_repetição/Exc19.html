@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19</title>
+</head>
+
+<body>
+    Digite quantos depósitos você fez no banco: <input type="number" id="inputDepositos"> <br><br>
+    Digite o valor de cada depósito: <input type="number" id="inputValor"> <br><br>
+    <button onclick="acompanhar()">Acompanhar grana</button><br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function acompanhar() {
+        var depositos = Number(inputDepositos.value);
+        var valor = Number(inputValor.value);
+        var mensagem = "";
+        var somatorio = 0;
+
+        for (var contador = 1; contador <= depositos; contador++) {
+            somatorio = valor * contador;
+            mensagem += `${contador}º Mês: R$ ${somatorio}.00<br>`;
+        }
+        divResposta.innerHTML = `${mensagem}<br> Total guardado: R$${somatorio}.00`;
+    }
+</script>

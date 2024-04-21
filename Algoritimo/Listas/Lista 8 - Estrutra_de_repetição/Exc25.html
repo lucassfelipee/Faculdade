@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 25</title>
+</head>
+
+<body>
+    Digite um número: <input type="number" id="inputNumero"> <br><br>
+    <button onclick="somar()">Somar Pares</button><br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function somar() {
+        var numero = Number(inputNumero.value);
+        var mensagem = "";
+        var somatorio = 0;
+        
+        if (numero >= 10 && numero <= 500) {
+            for (var contador = 0; contador <= numero; contador++) {
+                if (contador % 2 == 0) {
+                    somatorio += contador;
+                    mensagem += `${contador}<br>`;
+                }
+            }
+            divResposta.innerHTML = `${mensagem}<br><br>Soma dos pares: ${somatorio}`;
+        } else {
+            alert("O número deve ser maior ou igual a 10 e menor ou igual a 500!");
+        }
+    }
+</script>

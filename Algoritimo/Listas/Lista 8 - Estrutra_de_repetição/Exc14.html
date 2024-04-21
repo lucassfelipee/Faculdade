@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+
+<body>
+    Digite a sua idade: <input type="number" id="inputIdade" oninput="exibir()"> <br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function exibir() {
+        var idade = Number(inputIdade.value);
+        for (var contador = 0; contador <= idade; contador++) {
+            if (contador <= 4) {
+                divResposta.innerHTML += `${contador} anos (Primeira Infância)<br>`;
+            } else if (contador <= 6) {
+                divResposta.innerHTML += `${contador} anos (Pré-escolar)<br>`;
+            } else if (contador <= 10) {
+                divResposta.innerHTML += `${contador} anos (Segunda Infância)<br>`;
+            } else if (contador <= 18) {
+                divResposta.innerHTML += `${contador} anos (Adolescência)<br>`;
+            } else if (contador <= 50) {
+                divResposta.innerHTML += `${contador} anos (Adulto)<br>`;
+            } else if (contador <= 100) {
+                divResposta.innerHTML += `${contador} anos (Melhor idade)<br>`;
+            } else if (contador > 100) {
+                divResposta.innerHTML += `${contador} anos (Matusalém)<br>`;
+            }
+        }
+    }
+</script>

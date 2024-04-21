@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    Digite a tabuada: <input type="number" id="ipt_tabuada"> <br><br>
+    Digite o máximo: <input type="number" id="ipt_maximo"> <br><br>
+    <button onclick="ver()">Ver Tabuada</button><br><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+function ver() {
+        var tabuada = Number(ipt_tabuada.value);
+        var maximo = Number(ipt_maximo.value);
+    for(var contador = 1; contador <= maximo; contador++){
+        resultado = tabuada * contador;
+                if (contador % 2 == 1) {
+                    div_mensagem.innerHTML += `<p style="color: red">${tabuada} x ${contador} = ${resultado}<br></p>`;
+
+                } else {
+                    div_mensagem.innerHTML += `<p style="color: blue">${tabuada} x ${contador} = ${resultado}<br></p>`;
+                }
+    
+            }
+        }
+</script>

@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+</head>
+
+<body>
+    Digite quantas "Coca-Cola" você acha que já bebeu: <input type="number" id="inputQuantidadeCocaCola"> <br><br>
+    <button onclick="ver()">Ver a quantidade</button><br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function ver() {
+        var quantidadeCocaCola = Number(inputQuantidadeCocaCola.value);
+        var latinhas = "";
+
+        for (var contador = 1; contador <= quantidadeCocaCola; contador++) {
+            if (contador % 5 == 0) {
+                latinhas += `<img style="width: 100px;" src="https://dcdn.mitiendanube.com/stores/001/043/122/products/coca-220-ml1-ee73e1f6a28c9bf1ac15698464053189-480-0.png"><br>`;
+            } else {
+                latinhas += `<img style="width: 100px;" src="https://dcdn.mitiendanube.com/stores/001/043/122/products/coca-220-ml1-ee73e1f6a28c9bf1ac15698464053189-480-0.png">`;
+            }
+        }
+        divResposta.innerHTML = `${latinhas}`;
+    }
+</script>

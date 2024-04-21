@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18</title>
+</head>
+
+<body>
+    Digite quantas xícaras de café com leite você tomou na vida: <input type="number" id="inputQuantidadeXicaras"> <br><br>
+    <button onclick="ver()">Ver a quantidade</button><br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function ver() {
+        var quantidadeXicaras = Number(inputQuantidadeXicaras.value);
+        var xicaras = "";
+        var colherLeite = 0;
+        var colherCafe = 0;
+
+        for (var contador = 1; contador <= quantidadeXicaras; contador++) {
+            colherLeite++;
+            xicaras += `<p>${colherLeite}º Colher de leite em pó</p><img style="width: 60px;" src="https://minhasaude.proteste.org.br/wp-content/uploads/2023/06/colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg">`;
+        
+            colherCafe++;
+            xicaras += `<p>${colherCafe}º Colher com café em pó</p><img style="width: 60px;" src="https://dcdn.mitiendanube.com/stores/001/118/463/products/colher-medidora-de-cafe-felline-ceramica-11-8dec17baeaeaa0332a15889057444451-640-0.jpg">`;
+
+            colherCafe++;
+            xicaras += `<p>${colherCafe}º Colher com café em pó</p><img style="width: 60px;" src="https://dcdn.mitiendanube.com/stores/001/118/463/products/colher-medidora-de-cafe-felline-ceramica-11-8dec17baeaeaa0332a15889057444451-640-0.jpg"><br>`;
+        }
+        divResposta.innerHTML = `${xicaras}`;
+    }
+</script>

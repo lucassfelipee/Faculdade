@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22</title>
+</head>
+
+<body>
+    Digite o limite mínimo: <input type="number" id="inputLimiteMinimo"> <br><br>
+    Digite o limite máximo: <input type="number" id="inputLimiteMaximo"> <br><br>
+    Digite um número para teste de divisibilidade: <input type="number" id="inputDivisibilidade"> <br><br>
+    <button onclick="contar()">Contar</button><br><br>
+    <div id="divResposta"></div>
+</body>
+
+</html>
+<script>
+    function contar() {
+        var limiteMinimo = Number(inputLimiteMinimo.value);
+        var limiteMaximo = Number(inputLimiteMaximo.value);
+        var divisibilidade = Number(inputDivisibilidade.value);
+        
+        var mensagem = "";
+        var quantidadeNumeros = 0;
+        var somatorio = 0;
+        var contador = 0;
+        var media = 0;
+        var ehPrimeiroNumero = true;
+        var primeiroNumero = 0;
+        var ultimoNumero = 0;
+
+        if (limiteMinimo > 1) {
+            if (limiteMaximo < 100 && limiteMaximo >= limiteMinimo) {
+                if (divisibilidade >= 3 && divisibilidade <= 10) {
+                    for(var contador = limiteMinimo; contador <= limiteMaximo; contador++) {
+                        if (contador % divisibilidade == 0) {
+                            if (ehPrimeiroNumero) {
+                                primeiroNumero = contador;
+                                ehPrimeiroNumero = false;
+                            }
+                            mensagem += `${contador}, `;
+                            quantidadeNumeros++;
+                            somatorio += contador;
+                            ultimoNumero = contador;
+                        }
+                    }
+                    media = somatorio / quantidadeNumeros;
+                    mensagem += `<br><br>QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${quantidadeNumeros}<br><br>SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${somatorio}<br><br>MÉDIA DOS NÚMEROS EXIBIDOS: ${media}<br><br>MAIOR NÚMERO EXIBIDO: ${ultimoNumero}<br><br>MENOR NÚMERO EXIBIDO: ${primeiroNumero}`;
+                    divResposta.innerHTML = `${mensagem}`;
+                } else {
+                    alert("Número para teste de divisibilidade, por favor digite novamente!");
+                }
+            } else {
+                alert("Limite máximo inválido, por favor digite novamente!");
+            }
+        } else {
+            alert("Limite mínimo inválido, por favor digite novamente!");
+        }
+    }
+</script>
