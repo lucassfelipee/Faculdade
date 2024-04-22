@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    Digite a sua renda familiar mensal: <input type="number" id="inputRendaFamiliarMensal"><br><br>
+
+    <button onclick="analisar()">Analisar Renda</button>
+
+    <div id="divResposta"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var rendaFamiliarMensal = Number(inputRendaFamiliarMensal.value);
+
+        if (rendaFamiliarMensal <= 250){
+            divResposta.innerHTML = `Classe E`
+        } else if (rendaFamiliarMensal <= 900){
+            divResposta.innerHTML = `Classe D`
+        } else if (rendaFamiliarMensal <= 2500){
+            divResposta.innerHTML = `Classe C`
+        } else if (rendaFamiliarMensal <= 9500){
+            divResposta.innerHTML = `Classe B`
+        } else {
+            divResposta.innerHTML = `Classe A`
+        }
+    }
+</script>

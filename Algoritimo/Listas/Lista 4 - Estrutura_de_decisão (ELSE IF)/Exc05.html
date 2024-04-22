@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+<body>
+    Digite a nota do aluno: <input type="number" id="inputNota"><br><br>
+
+    <button onclick="classificar()">Classificar aluno</button>
+</body>
+</html>
+<script>
+    function classificar() {
+        var nota = Number(inputNota.value);
+
+        if (nota >= 9.5){
+            alert("Aluno fora da curva");
+        } else if (nota > 7){
+            alert("Aluno na acima da média");
+        } else if (nota >= 5){
+            alert("Aluno na média");
+        } else if (nota < 5){
+            alert("Aluno precisa de muita ajuda");
+        }
+    }
+</script>
