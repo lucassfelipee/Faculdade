@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+<body>
+    Digite o tipo de passageiro: <select id="selectTipoPassageiro">
+        <option value="1">Comum</option>
+        <option value="2">Estudante</option>
+        <option value="3">Idoso/PNE</option>
+    </select><br><br>
+    Digite o tipo de passagem: <select id="selectTipoPassagem">
+        <option value="1">Passagem única</option>
+        <option value="2">Passagem integração</option>
+    </select><br><br>
+    <button onclick="simular()">Simular preço</button><br><br>
+    <div id="divResposta"></div> 
+</body>
+</html>
+<script>
+    function simular() {
+        var tipoPassageiro = selectTipoPassageiro.value;
+        var tipoPassagem = selectTipoPassagem.value;
+        var precoPassagem = 4.4;
+        var precoIntegracao = 5.9;
+        var precoFinal = 0;
+
+        if (tipoPassageiro == "1" && tipoPassagem == "1") {
+            precoFinal = precoPassagem
+            divResposta.innerHTML = `Valor da passagem escolhida: R$${precoFinal}`
+        } else if (tipoPassageiro == "1" && tipoPassagem == "2") {
+            precoFinal = precoIntegracao
+            divResposta.innerHTML = `Valor da passagem escolhida: R$${precoFinal}`
+        } else if ((tipoPassageiro == "2" || tipoPassageiro == "3") && tipoPassagem == "1") {
+            precoFinal = precoPassagem * 0.5;
+            divResposta.innerHTML = `Valor da passagem escolhida: R$${precoFinal}`
+        } else if ((tipoPassageiro == "2" || tipoPassageiro == "3") && tipoPassagem == "2") {
+            precoFinal = precoIntegracao * 0.5;
+            divResposta.innerHTML = `Valor da passagem escolhida: R$${precoFinal}`
+        }
+    }
+</script>

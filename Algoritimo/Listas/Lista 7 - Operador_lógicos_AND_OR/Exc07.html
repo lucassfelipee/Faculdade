@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07</title>
+</head>
+<body>
+    Digite o seu login: <input type="text" id="inputLogin"><br><br>
+    Digite a sua senha: <input type="password" id="inputSenha"><br><br>
+    Digite uma informação pessoal sua: <input type="text" id="inputInformacaoPessoal"><br><br>
+    <button onclick="autenticar()">Autenticar</button><br><br>
+    <div id="divResposta"></div> 
+</body>
+</html>
+<script>
+    var tentativas = 3;
+    
+    function autenticar() {
+        var login = inputLogin.value;
+        var senha = inputSenha.value;
+        var informacaoPessoal = inputInformacaoPessoal.value;
+
+        if (tentativas == 0) {
+
+        } else if (login == "ana" && senha == "braga" && (informacaoPessoal == "1949" || informacaoPessoal == "louro josé")) {
+            divResposta.innerHTML = `Usuário autenticado`;
+            tentativas = 3;
+        } else {
+            tentativas--;
+            divResposta.innerHTML = `Falha na autenticação<br>Você ainda tem ${tentativas} tentativa(s)`;
+            if (tentativas == 0) {
+                divResposta.innerHTML += `<br><br>Usuário BLOQUEADO! Procure seu gerente!`;
+            }
+        }
+    }
+</script>

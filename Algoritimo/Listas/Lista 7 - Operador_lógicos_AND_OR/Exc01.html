@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body>
+    Digite a nota para o atendimento: <input type="number" id="inputNota"><br><br>
+    <button onclick="avaliar()">Avaliar atendimento</button><br><br>
+    <div id="divResposta"></div> 
+</body>
+</html>
+<script>
+    function avaliar() {
+        var nota = Number(inputNota.value);
+
+        if (nota < 0 || nota > 10) {
+            divResposta.innerHTML = "Nota inválida";
+        } else if (nota >= 0 && nota < 5) {
+            divResposta.innerHTML = "Não aprovado";
+        } else if (nota >= 5 && nota <= 6) {
+            divResposta.innerHTML = "Neutro";
+        } else if (nota > 6) {
+            divResposta.innerHTML = "Aprovado";
+        }
+    }
+</script>
