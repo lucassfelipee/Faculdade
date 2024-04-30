@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+
+    Filmes Favoritos:
+    <input type="text" id="ipt_filmes"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    var lista_filme = []
+    function cadastrar(){
+        var filme = input_filmes.value
+        lista_filme.push(filme);
+        
+        div_mensagem.innerHTML += `${filme}<br>`
+    }
+
+</script>

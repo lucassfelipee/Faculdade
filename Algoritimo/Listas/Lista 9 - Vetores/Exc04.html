@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+
+    Filmes Favoritos (em ordem):
+    <input type="text" id="ipt_filme"><br>
+    <button onclick="cadastrar()">Cadastrar filme</button><br>
+    <button onclick="ver()">Ver Favoritos</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    var lista_filme = []
+
+    function cadastrar(){
+        var filme = ipt_filme.value
+        lista_filme.push(filme)
+    }
+
+    function ver(){
+        var tamanho_lista = lista_filme.length
+        div_mensagem.innerHTML = `${lista_filme}<br>
+
+        Total: ${tamanho_lista}<br>
+
+        O filme que mais gosta é ${lista_filme[0]}.<br>
+
+        E desses, o que menos gosta é ${lista_filme[lista_filme.length - 1]}.`;
+    }
+
+</script>

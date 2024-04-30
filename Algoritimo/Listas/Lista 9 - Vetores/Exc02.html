@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    Destino viagem: <input type="text" id="ipt_destino">
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="primeiro()">Primeira viagem</button>
+    <button onclick="segundo()">Terceira viagem</button>
+    <button onclick="terceiro()">Ultima viagem</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    var lista_destino = [];
+    function adicionar() {
+        var destino = ipt_destino.value;
+        lista_destino.push(destino);
+    }
+    function primeiro(){
+        var destino = ipt_destino.value;
+        var tamanho_lista = lista_destino.length;
+
+        if (tamanho_lista < 1) {
+            div_mensagem.innerHTML = `Ainda não viajou`
+        } else {
+            div_mensagem.innerHTML = `${lista_destino[0]}`
+        }
+        
+    }function segundo( ) {
+        var destino = ipt_destino.value;
+        var tamanho_lista = lista_destino.length;
+        
+        if (tamanho_lista < 3) {
+            div_mensagem.innerHTML = `Ainda não viajou`
+        } else {
+            div_mensagem.innerHTML = `${lista_destino[2 ]}`
+        }   
+    } function terceiro(){
+    var destino = ipt_destino.value;
+    var tamanho_lista = lista_destino.length;
+        
+    if (tamanho_lista < 1) {
+            div_mensagem.innerHTML = `Ainda não viajou`
+        } else {
+            div_mensagem.innerHTML = `${lista_destino[tamanho_lista - 1]}`
+        }   
+    }
+</script
+>

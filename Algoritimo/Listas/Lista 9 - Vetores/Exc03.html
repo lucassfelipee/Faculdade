@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+
+    Bairros onde já morou:
+    <input type="text" id="ipt_bairro"> <br>
+    <button onclick="cadastrar()">Cadastrar Bairro</button><br>
+    Quer relembrar qual?
+    <input type="number" id="ipt_numero"><br>
+    <button onclick="relembrar()">Relembrar moradia</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    var lista_bairro = [];
+
+    function cadastrar(){
+        var bairro = ipt_bairro.value;
+        lista_bairro.push(bairro);
+    }
+
+    function relembrar(){
+        var numero = Number(ipt_numero.value)
+
+        var tamanho_lista = lista_bairro.length
+
+        if(numero > tamanho_lista){
+            div_mensagem.innerHTML = `Você ainda não morou num ${numero}º bairro!`;
+        } else {
+            div_mensagem.innerHTML = `Seu ${numero}º foi ${lista_bairro[numero - 1]}`;
+        }
+    }
+
+</script>
