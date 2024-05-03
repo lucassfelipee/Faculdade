@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceria</title>
+</head>
+
+<body>
+    Quantidade de macarons: <input type="text" id="ipt_macarons"><br>
+    Quantidade de brigadeiro: <input type="text" id="ipt_brigadeiro"><br>
+    Quantidade de cupcakes: <input type="text" id="ipt_cupcakes"><br>
+    Quantidade de cheesecakes: <input type="text" id="ipt_cheesecakes"><br> <br>
+
+
+    Preço de cada unidade de macarons: <input type="text" id="ipt_preco_macarons"><br>
+    Preço de cada unidade de brigadeiro: <input type="text" id="ipt_preco_brigadeiro"><br>
+    Preço de cada unidade de cupcakes: <input type="text" id="ipt_preco_cupcakes"><br>
+    Preço de cada unidade de cheesecakes: <input type="text" id="ipt_preco_cheescakes"><br>
+    <button onclick="venda()">Verificar Venda</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function venda() {
+        div_mensagem.innerHTML = "";
+        var macarons = Number(ipt_macarons.value);
+        var brigadeiro = Number(ipt_brigadeiro.value);
+        var cupcakes = Number(ipt_cupcakes.value);
+        var cheesecakes = Number(ipt_cheesecakes.value);
+
+        var preço_macarons = Number(ipt_preco_macarons.value);
+        var preço_brigadeiro = Number(ipt_preco_brigadeiro.value);
+        var preço_cupcakes = Number(ipt_preco_cupcakes.value);
+        var preço_cheescakes = Number(ipt_preco_cheescakes.value);
+
+        var totalMacarons = macarons * preço_macarons;
+        var totalBrigadeiro = brigadeiro * preço_brigadeiro;
+        var totalCupcakes = cupcakes * preço_cupcakes;
+        var totalCheescake = cheesecakes * preço_cheescakes;
+        var preço_total = totalMacarons + totalBrigadeiro + totalCupcakes + totalCheescake;
+
+
+        var contador = 1;
+        if (macarons >= 0 && brigadeiro >= 0 && cupcakes >= 0 && cheesecakes >= 0) {
+
+
+            for (var cont_macarons = 1; cont_macarons <= macarons; cont_macarons++) {
+                div_mensagem.innerHTML += `Venda ${contador} - <img style="width: 50px; height: 50px;" src="https://cdn.vnda.com.br/cacaunoirecommerce/2023/10/18/11_07_18_183_11_10_7_762_macarondocedeleite.jpg?v=1697638042" >- R$ ${preço_macarons} <br>`;
+                contador++;
+            }
+
+            for (var cont_brigadeiro = 1; cont_brigadeiro <= brigadeiro; cont_brigadeiro++) {
+                div_mensagem.innerHTML += `Venda ${contador} - <img style="width: 50px; height: 50px;" src="https://cdn.sodiedoces.com.br/wp-content/uploads/2022/10/28145240/ao-leite_615x500px.png">- R$ ${preço_brigadeiro} <br>`;
+                contador++;
+            }
+            for (var cont_cupcakes = 1; cont_cupcakes <= cupcakes; cont_cupcakes++) {
+                div_mensagem.innerHTML += `Venda ${contador} - <img style="width: 50px; height: 50px;" src="https://images.tcdn.com.br/img/img_prod/1028527/forma_cupcake_forneavel_rosa_45_unidades_777_1_1ffb4688acd9ce04eabf1047ed35dc70.png">- R$ ${preço_cupcakes} <br>`;
+                contador++;
+            }
+            for (var cont_cheescakes = 1; cont_cheescakes <= cheesecakes; cont_cheescakes++) {
+                div_mensagem.innerHTML += `Venda ${contador} - <img style="width: 50px; height: 50px;" src="https://i.pinimg.com/736x/9d/9b/15/9d9b156c18e4bbd6e2c2f0c1f26d6fe3.jpg">- R$ ${preço_cheescakes} <br>`;
+                contador++;
+
+            }
+            div_mensagem.innerHTML += `Com a quantidade de ${macarons} Macarons, ${brigadeiro} Brigadeiros, ${cupcakes} Cupcakes e ${cheesecakes} Cheesecakes, a venda totalizará R$${preço_total}`
+
+        } else {
+            div_mensagem.innerHTML = `Coloque valores maior que 0`;
+        }
+    }
+
+</script>
