@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+  Nome da linha: <input type="text" id="ipt_linha"> 
+  <button onclick="busao()">Gravar busão</button> <br>
+    <br>Pesquisar linha: <input type="text" id="ipt_pesquisar">
+    <button onclick="pesquisa()">Pesquisar</button>
+  <div id="div_mensagem"></div>
+  <div id="div_mens"></div>
+</body>
+</html>
+<script>
+    var lista_linha = [];
+    function busao() {
+        div_mensagem.innerHTML = "";
+        var onibus = ipt_linha.value;
+        lista_linha.push(onibus);
+        var tamanho_lista = lista_linha.length;
+
+        for( var index = tamanho_lista - 1; index >= 0; index --){
+            div_mensagem.innerHTML += `${lista_linha[index]} <br>`;
+        }
+    } 
+    
+    function pesquisa(){
+        var onibus = ipt_pesquisar.value;
+        var cont_linha = 0;
+        var texto = "";
+        
+        if (lista_linha.indexOf(onibus) >= 0){
+            for(var cont = 0; cont < lista_linha.length; cont ++){
+                var linha_atual = lista_linha[cont];
+                if (linha_atual == onibus){
+                    texto += `, ${cont + 1}`
+                    cont_linha ++   
+                }
+            }
+            div_mens.innerHTML =  ` <br> Você já pegou essa linha ${cont_linha} vezes, nessa ordem${texto}`
+        }else{
+            div_mens.innerHTML = ` <br>Você nunca pegou essa linha`
+        }
+        
+    }
+</script>

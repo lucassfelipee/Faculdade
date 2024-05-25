@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+</head>
+<body>
+    Nome de cada projeto que ja criou na vida: <input type="text" id="ipt_nome"><br>
+    <button onclick="registro()">Registrar Projeto</button><br>
+    <button onclick="mostrar()">Mostrar Projetos</button><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    var lista_projetos = [];
+    function registro(){
+        var nome = ipt_nome.value;
+        div_mensagem.innerHTML = "";
+        lista_projetos .push( nome );
+        var tamanho_lista = lista_projetos .length;
+
+        if(tamanho_lista>= 0 && tamanho_lista < 5){
+            div_mensagem.innerHTML = `Você já fez ${tamanho_lista } projetos. Por isso você é um profissional júnior <br>`;  
+        } else if(tamanho_lista > 4 && tamanho_lista <=  12){
+            div_mensagem.innerHTML =` Você já fez ${tamanho_lista } projetos. Por isso você é um profissional pleno <br>`; 
+        } else if (tamanho_lista >= 13){
+            div_mensagem.innerHTML =` Você já fez ${tamanho_lista } projetos. Por isso você é um profissional sênior <br>`;  
+        }
+    }
+    function mostrar(){
+        var tamanho_lista  = lista_projetos .length;
+        div_mensagem.innerHTML = "";
+
+        for(var cont = tamanho_lista - 1; cont >= 0 ; cont-- ){
+
+            div_mensagem.innerHTML += ` ${lista_projetos  [cont]} <br>` 
+        }
+
+}
+</script>

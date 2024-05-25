@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07</title>
+</head>
+<body>
+    Nome dos filmes que você mais gosta: <input type="text" id="ipt_filme">
+    <button onclick="cadastra()">Cadastrar</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    
+    var lista_filme = []
+    var contador = 0;
+    function cadastra(){
+        var filme = ipt_filme.value
+        lista_filme.push(filme);
+        
+        if (contador % 2 == 0){
+            div_mensagem.innerHTML += `  <span style="color: blue;">${filme}</span><br>`  
+        } else {
+            div_mensagem.innerHTML += `  <span style="color: red;">${filme}</span><br>`  
+            
+        }
+        contador++;
+    }
+</script>

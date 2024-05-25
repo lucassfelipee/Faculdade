@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+
+<body>
+    Indique o resultado: <select id="select_resultado">
+        <option value="#">Selecione um resultado</option>
+        <option value="vitoria">Vitória</option>
+        <option value="empate">Empate</option>
+        <option value="derrota">Derrota</option>
+    </select><br>
+    Indique o jogo: <input oninput="jogo()" type="text" id="ipt_jogo"><br>
+    <button onclick="registrar()">Registrar jogo</button><br>
+    <div id="div_mensagem"></div>
+    <div id="div_men"></div>
+</body>
+
+</html>
+<script>
+    var lista_jogo = [];
+    var contV = 0;
+    var contE = 0;
+    var contD = 0;
+    function registrar() {
+        var resultado = select_resultado.value;
+        lista_jogo.push(resultado);
+        
+        
+        
+        if (resultado == "vitoria") {
+            contV++
+        } else if (resultado == "empate") {
+            contE++
+        } else if (resultado == "derrota") {
+            contD++
+        }
+        var ponto_total = contV * 3 + contE * 1;
+        var aproveitamento = ponto_total / (lista_jogo.length * 3) * 100;
+        
+        div_mensagem.innerHTML=`  O time teve: ${contV} vitórias, ${contE} empates, ${contD} derrotas. <br>
+        Pontuação total: ${ponto_total} pontos. <br> 
+        Aproveitamento: ${aproveitamento}`
+    }
+    function jogo() {
+        div_men.innerHTML ="";
+        var jogo = ipt_jogo.value;
+        var jogo_atual = lista_jogo[jogo -1];
+        
+        
+        if (jogo > lista_jogo.length){
+            div_men.innerHTML+=` Não foi cadastrado um ${jogo}º jogo `; 
+        } else{
+            div_men.innerHTML += ` <br>No ${jogo}º jogo, o time ${jogo_atual}`;
+
+        }
+    }
+
+
+
+</script>

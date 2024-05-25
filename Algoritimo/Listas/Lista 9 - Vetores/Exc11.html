@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+
+<body>
+    Preço: <input type="text" id="ipt_preco">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="Atualizar()">Atualizar Estoque</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+
+    var lista_preco = [];
+    function cadastrar() {
+        var preco = Number(ipt_preco.value);
+        lista_preco.push(preco);
+    }
+    
+    function Atualizar() {
+        div_mensagem.innerHTML = "";
+        var contador = 0;
+        var soma_preco = 0;
+        
+        for (var index = lista_preco.length - 1; index >= 0; index--) {
+            var atual = lista_preco[index]
+            div_mensagem.innerHTML +=`${atual}`
+            contador++
+            soma_preco += atual
+        }
+        div_mensagem.innerHTML=`Você tem ${contador} produtos cadastrados em estoque. <br> Seu estoque vale R$${soma_preco}.`
+    }
+
+</script>

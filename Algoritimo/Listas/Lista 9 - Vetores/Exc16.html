@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16</title>
+</head>
+<body>
+    Nome do produto: <input type="text" id="ipt_nome"> 
+    Preço do produto: <input type="text" id="ipt_preco"> <br>
+
+   <br><button onclick="cadastrar()">Cadastrar</button> 
+    <button onclick="estoque()">Realatório do estoque</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    var lista_nome = [];
+    var lista_preco = [];
+    
+    function cadastrar(){
+        var nome = ipt_nome.value;
+        var preco = Number(ipt_preco.value);
+        
+        lista_nome.push(nome);
+        lista_preco.push(preco);
+        
+    }
+    
+    function estoque (){
+        var somaPrecos = 0;
+        var somaPrecosVenda = 0;
+        var maior = lista_preco[0];
+        var menor = lista_preco[0];
+        
+        div_mensagem.innerHTML = `Total de produto: ${lista_nome.length} <br>`;
+        
+        for(var index = 0; index < lista_nome.length ; index++){
+            
+                if (lista_preco[index] > maior){
+                    maior = lista_preco[index];
+                }
+                if (lista_preco[index] < menor){
+                    menor = lista_preco[index];
+                }
+            div_mensagem.innerHTML += `<br> Produto ${index + 1}: ${lista_nome[index]} 
+          <br> Preço de compra: R$${lista_preco[index]}. <br>Vende por R$${lista_preco[index]*1.25} <br>`;
+          
+             somaPrecos += lista_preco[index]; 
+             somaPrecosVenda += lista_preco[index]; 
+        }
+        div_mensagem.innerHTML += `<br>Produto mais caro: R$${maior} <br>Produto mais barato: R$${menor}`;
+
+        div_mensagem.innerHTML += `<br>Soma dos preços de compra: R$${somaPrecos}`;
+
+        var mediaPrecoVenda = somaPrecosVenda / lista_nome.length;
+        div_mensagem.innerHTML += `<br>Média dos preços de venda: R$${mediaPrecoVenda}`;
+    }
+</script>

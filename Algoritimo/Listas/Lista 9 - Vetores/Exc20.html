@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 20</title>
+</head>
+
+<body>
+    Nome do produto: <input type="text" id="ipt_nome"><br>
+    Preço do produto: <input type="text" id="ipt_preco"> <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Atualizar Estoque</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    var lista_nome = [];
+    var lista_preco = [];
+    function cadastrar() {
+        var nome = ipt_nome.value;
+        var preco = Number(ipt_preco.value);
+
+        if (nome.length < 3 || preco < 0) {
+            div_mensagem.innerHTML = `Cadastro inválido!`;
+        } else {
+
+            div_mensagem.innerHTML = "";
+            lista_nome.push(nome);
+            lista_preco.push(preco);
+            div_mensagem.innerHTML = `Cadastro feito com sucesso!`;
+        }
+    }
+
+    function atualizar() {
+        div_mensagem.innerHTML = "";
+        var total_lista = 0;
+        div_mensagem.innerHTML += `Você tem ${lista_nome.length} produtos cadastrados em estoque: <br>`;
+        for (var index = 0; index < lista_nome.length; index++) {
+
+            total_lista += lista_preco[index];
+
+            div_mensagem.innerHTML += `${index + 1}. ${lista_nome[index]} - R$:${lista_preco[index]} <br>`;
+            
+        }
+        div_mensagem.innerHTML += `Seu estoque vale R$:${total_lista}`;
+
+    }
+</script>
