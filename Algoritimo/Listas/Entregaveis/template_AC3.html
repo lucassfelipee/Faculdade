@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tênis Clube SPTECH</title>
+  <style>
+    body {
+      display: flex;
+      align-items: stretch;
+    }
+
+    body div:first-child,
+    body div:nth-of-type(2) {
+      padding: 8px;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+    }
+
+    body div:nth-of-type(2) {
+      flex-grow: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <label for="input_qtd_partidas">
+      Rodadas máximas:
+      <input id="input_qtd_partidas" /><br />
+    </label>
+
+    <button onclick="realizar_partida()">Realizar partida</button>
+
+    <h3>Informe as partidas que deseja relembrar</h3>
+
+    <label for="input_inicio_intervalo">Início:</label>
+    <input id="input_inicio_intervalo" />
+    <label for="input_fim_intervalo">Fim:</label>
+    <input id="input_fim_intervalo" />
+
+    <button onclick="relembrar_partidas()">Relembrar</button>
+  </div>
+  <div>
+    <h3>Painel</h3>
+    <div id="div_painel"></div>
+  </div>
+</body>
+
+</html>
+
+<script>
+
+  var lista01 = [];
+  var lista02 = [];
+
+  var NumPartida = 0;
+
+  function realizar_partida() {
+    var jogador01 = parseInt(Math.random() * 10);
+    var jogador02 = parseInt(Math.random() * 10);
+    var partidas = Number(input_qtd_partidas.value);
+
+    if (partidas <= 0) {
+      alert(`Número de partidas inválido`);
+    } else {
+      if (NumPartida >= partidas) {
+        alert(`Número de partidas excedido`);
+      } else {
+        div_painel.innerHTML = "";
+
+        NumPartida++;
+
+        lista01.push(jogador01);
+        lista02.push(jogador02);
+
+        var TJ01 = 0;
+        var TJ02 = 0;
+        for (var rodadas = 0; rodadas < lista01.length; rodadas++) {
+
+          TJ01 = lista01[rodadas]
+          TJ02 = lista02[rodadas]
+
+          div_painel.innerHTML += `Rodada: ${rodadas + 1}<br> Jogador 1: ${lista01[rodadas]}<br> Jogador 2: ${lista02[rodadas]}<br> Total do jogador 1: ${TJ01}<br> Total do jogador 2: ${TJ02}<br>
+          `;
+
+        }
+      }
+
+    }
+  }
+
+  function relembrar_partidas() {
+    div_painel.innerHTML = "";  
+    var começo = Number(input_inicio_intervalo.value);
+    var final = Number(input_fim_intervalo.value);
+
+    var TJ01 = 0;
+    var TJ02 = 0;
+
+
+    for (var rodadas = começo - 1; rodadas < final; rodadas++) {
+
+      TJ01 += lista01[rodadas];
+      TJ02 += lista02[rodadas];
+
+      div_painel.innerHTML += `Rodada: ${rodadas + 1}<br> Jogador 1: ${lista01[rodadas]}<br>Jogador 2: ${lista02[rodadas]}<br>Total do jogador 1: ${TJ01}<br>Total do jogador 2: ${TJ02}<br>`;
+
+    }
+  }
+
+</script>

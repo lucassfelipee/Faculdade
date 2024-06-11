@@ -9,16 +9,24 @@
 
 <body>
     Nome do produto: <input type="text" id="ipt_nome"><br>
-    Preço do produto: <input type="text" id="ipt_preco"> <br>
+    Preço do produto: <input type="text" id="ipt_preco"> <br> <br>
     <button onclick="cadastrar()">Cadastrar</button>
-    <button onclick="atualizar()">Atualizar Estoque</button>
+    <button onclick="atualizar()">Atualizar Estoque</button> <br> <br>
     <div id="div_mensagem"></div>
+    <select name="numero" id="select_numero">
+        <option value="#">Escolha uma opção</option>
+        <option value="1">Maior de...</option>
+        <option value="2">Menor de...</option>
+    </select> <br> <br>
+    Valor: <input type="number" id="ipt_valor">
+    <button onclick="filtrar()">Filtrar Produto</button>
+    <div id="div_men"></div>
 </body>
 
 </html>
 <script>
-    var lista_nome = [];
-    var lista_preco = [];
+    var lista_nome = ["aaa","bbb","ccc","dddd","eeee"];
+    var lista_preco = [20,42,54,76,55];
     function cadastrar() {
         var nome = ipt_nome.value;
         var preco = Number(ipt_preco.value);
@@ -46,6 +54,20 @@
             
         }
         div_mensagem.innerHTML += `Seu estoque vale R$:${total_lista}`;
-
+    }
+    function filtrar() {
+        var valor = ipt_valor.value;
+        var tipo = select_numero.value;
+        div_men.innerHTML = "";
+        for(var index = 0; index < lista_preco.length; index++){
+            if (tipo == "1" && valor < lista_preco[index]){
+                div_men.innerHTML += `${lista_nome[index]} <br>`;
+            } else if (tipo == "2" && valor > lista_preco[index]) {
+                div_men.innerHTML += `${lista_nome[index]} <br>`;
+            }
+            
+            
+        }
+        
     }
 </script>
